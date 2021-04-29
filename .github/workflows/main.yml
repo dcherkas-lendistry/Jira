@@ -26,12 +26,21 @@ jobs:
       - uses: actions/checkout@v2
 
 
-      # Runs a single command using the runners shell
+      # Login to Jira
       - name: Jira Login
         uses: atlassian/gajira-login@v2.0.0
         env:
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          
+      - name: Create
+        id: create
+        uses: atlassian/gajira-create@master
+        with:
+          project: Git
+          issuetype: Build
+          summary: |
+            Build completed for ${{ github.repository }}
         
 
