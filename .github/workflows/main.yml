@@ -39,7 +39,7 @@ jobs:
         with:
           project: GIT
           issuetype: Task
-          description: Created automatically via GitHub Actions
+          summary: Created automatically via GitHub Actions
 
         
 
