@@ -35,10 +35,11 @@ jobs:
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
           
       - name: Jira TODO
-        uses: atlassian/gajira-todo@master
+        uses: atlassian/gajira-create@master
         with:
           project: GIT
           issuetype: Task
           description: Created automatically via GitHub Actions
+
         
 
